@@ -1,12 +1,14 @@
 import Navbar from "./components/Navbar"
 import Graph from "./components/Graph"
+import Stats from "./components/Stats"
 
 export default function App() {
   return (
-    <h1>
+    <div>
       <Navbar/>
       <Graph/>
-    </h1>
+      <Stats />
+    </div>
   )
 }
 
