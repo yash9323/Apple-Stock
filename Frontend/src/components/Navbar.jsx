@@ -6,21 +6,22 @@ import { BsGraphUpArrow } from "react-icons/bs";
 
 const Navbar = () => {
   return (
-    <div className='flex justify-between items-center m-5 mb-2 bg-neutral-900 rounded-xl p-2'>
+    <div className='flex justify-between items-center bg-neutral-900 rounded-xl p-2'>
         {/* Logo */}
         <div className='flex items-center'>
-          <BsGraphUpArrow/>
-          <h1 className='text-xl font-sans font-bold ml-2'>
+          <h1 className='text-xl font-sans font-bold ml-2 mr-2'>
             Unlevered
           </h1>
+          {/* <BsGraphUpArrow/> */}
         </div>
         {/* Search */}
-        <div className='flex items-center border border-stone-600 rounded-2xl pr-2'>
-          <input type="text" placeholder='Search Here' className='bg-transparent text-white text-sm p-2 w-80'></input>
-          <LuSearch className='ml-2 mr-2'/>
+        <div class="flex items-center border border-stone-600 rounded-2xl pr-2 max-sm:hidden">
+          <input type="text" placeholder="Search Here" class="bg-transparent text-white text-sm p-2 w-80" />
+          <LuSearch class="ml-2 mr-2" />
         </div>
         {/* Profile */}
         <div className='flex items-center mr-2'>
+          <LuSearch size={20} class="mr-3 sm:invisible" />
           <IoMdNotificationsOutline size={20} className='mr-3'/>
           <FaRegUserCircle size={20}/>
         </div>
