@@ -29,18 +29,39 @@ export const formatStockData = (stockData) => {
 export const candleStickOptions = {
     chart: {
         type: "candlestick",
+        toolbar: {
+            show: true,
+            offsetX: 0,
+            offsetY: 0,
+            tools: {
+              download: false,
+              selection: true,
+              zoom: false,
+              zoomin: true,
+              zoomout: true,
+              pan: false,
+              reset: false | '<img src="/static/icons/reset.png" width="20">',
+              customIcons: []
+            },    
+        }
     },
     title: {
         text: "CandleStick Chart",
-        align: "left",
+        align: "center",
     },
     xaxis: {
         type: "datetime",
+        tooltip: {
+            enabled: true,
+        },
     },
     yaxis: {
         tooltip: {
             enabled: true,
         },
+    },
+    tooltip: {
+        enabled: false,
     },
 };
 
