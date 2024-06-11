@@ -43,19 +43,15 @@ const News = ({}) => {
           case 3:
             return (
               <>
-                {dummy.map((item,index) => 
-                <div>
-                    <div className='flex justify-between items-center'>
-                        <h4 className='font-bold text-lg'>
-                            Aritcle {index+1}
-                        </h4>
+                {dummy.filter((item, index) => index < 3).map((filteredItem, index) => (
+                <div key={filteredItem.id || index}>
+                    <div className='flex justify-between items-center mr-3'>
+                        <h4 className='font-bold text-lg'>Article {index + 1}</h4>
                         <CiShare1/>
                     </div>
-                    <p className='text-xs'>
-                        {item.summary}
-                    </p>
+                    <p className='text-xs'>{filteredItem.summary}</p>
                 </div>
-            )}
+            ))}
               </>
             );
           default:
@@ -63,9 +59,9 @@ const News = ({}) => {
         }
       };
     return (
-        <div className='bg-neutral-900 rounded-xl p-2 w-2/4'>
+        <div className='bg-neutral-900 rounded-xl p-2 w-2/4 max-md:w-full'>
             <h4 className='text-lg font-bold text-center'>News for Apple Inc.</h4>
-            <div className='flex text-sm gap-x-3 rounded-xl p-2 w-1/2'>
+            <div className='flex text-sm gap-x-3 rounded-xl p-2 w-1/2 max-md:w-full'>
                 <button onClick={handleClick(1)} 
                 className={`
                     ${currentView === 1 ? 'bg-gray-800 rounded-xl p-2' : 'rounded-xl p-2'}

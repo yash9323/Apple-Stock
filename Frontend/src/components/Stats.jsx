@@ -46,7 +46,7 @@ const Stats = () => {
 
   return (
     <div className='bg-neutral-900 rounded-xl p-2'>
-      <div className='flex text-sm gap-x-3 rounded-xl p-2 w-1/2'>
+      <div className='flex text-sm gap-x-3 rounded-xl p-2 w-1/2 max-md:w-full'>
         <button onClick={handleClick(1)} 
         className={`
             ${currentView === 1 ? 'bg-gray-800 rounded-xl p-2' : 'rounded-xl p-2'}

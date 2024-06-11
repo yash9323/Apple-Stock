@@ -1,11 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import ReactApexChart from 'react-apexcharts'
-
-export const fetchStockData = async (symbol) => {
-    const response = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=LDYE806XCM3E0OA6`)
-    const data = await response.json()
-    return data
-}
+import da from "../data/query"
 
 export const formatStockData = (stockData) => {
 
@@ -54,18 +49,13 @@ const Chart = () => {
     const [stockData, setStockData] = useState({})
 
     useEffect(() => {
-        fetchStockData("aapl").then(data =>
-            setStockData(data)
-        )
+        setStockData(da)
     }, [])
-
-    console.log(stockData);
 
     const seriesData = useMemo(() => formatStockData(stockData), [stockData])
 
-    console.log(seriesData);
     return (
-        <div className='w-1/2'>
+        <div className='w-1/2 max-md:w-full max-md:h-1/2 '>
             <ReactApexChart
             series={
                 [

@@ -5,7 +5,7 @@ import Footer from "./components/Footer"
 
 export default function App() {
   return (
-    <div className="flex flex-col m-5 gap-y-2">
+    <div className="flex flex-col m-5 gap-y-2 max-sm:m-2">
       <Navbar/>
       <Graph/>
       <Stats />
